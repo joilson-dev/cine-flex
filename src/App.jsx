@@ -1,9 +1,11 @@
-import './App.css'
+import Header from "./components/Header"
+import AppRoutes from "./router/AppRoutes"
 
 function App() {
   return (
     <>
-      <p>teste</p>
+      <Header />
+      <AppRoutes />
     </>
   )
 }
