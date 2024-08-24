@@ -1,7 +1,14 @@
+import logo from "/logo.png";
+import { ContainerHeaderStyled, LogoStyled, NameEnterpriseStyled } from "./Header-styles"
+
+
 function Header() {
     return (
         <>
-            <p>Logo1</p>
+            <ContainerHeaderStyled>
+                <LogoStyled src={logo} alt="logo" />
+                <NameEnterpriseStyled>Cineflex</NameEnterpriseStyled>
+            </ContainerHeaderStyled>
         </>
     )
 }
