@@ -42,6 +42,10 @@ body{
     display: block;
   }
 
+  li{
+    list-style-type: none;
+  }
+
 
 `;
 

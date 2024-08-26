@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { TitleStyles } from "../../components/Title-styles";
 import axios from "axios";
+import { ContainerMoviesStyled, ImgStyled } from "./Movies-styles";
 
 
 function Movies() {
@@ -16,15 +17,14 @@ function Movies() {
     return (
         <>
             <TitleStyles>Em cartaz</TitleStyles>
-
             {films ? (
-                <ul>
+                <ContainerMoviesStyled>
                     {films.map((film) => (
                         <li key={film.id}>
-                            <img src={film.posterURL} alt={film.title} />
+                            <ImgStyled src={film.posterURL} alt={film.title} />
                         </li>
                     ))}
-                </ul>
+                </ContainerMoviesStyled>
             ) : null}
 
         </>
