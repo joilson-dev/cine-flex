@@ -9,12 +9,17 @@ export const SessionStyled = styled.div`
   margin-left: 20px;
 
   h3 {
-    font-size: 18px;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 32.61px;
+    letter-spacing: 0.04em;
+    text-align: left;
     color: #FFFFFF;
     margin-bottom: 15px;
     padding-bottom: 10px;
     border-bottom: 1px solid #444;
     width: 100%;
+
   }
 
   div {
@@ -25,17 +30,21 @@ export const SessionStyled = styled.div`
 
   p {
     background-color: transparent;
-    color: #FF6F61;
-    padding: 10px;
-    border: 2px solid #FF6F61;
+    color: #EE897F;
+    padding: 8px;
+    border: 2px solid #EE897F;
     border-radius: 8px;
     text-align: center;
     cursor: pointer;
     font-size: 16px;
     transition: all 0.2s ease-in-out;
+    font-weight: 400;
+    line-height: 26.09px;
+    letter-spacing: 0.04em;
+
 
     &:hover {
-      background-color: #FF6F61;
+      background-color: #EE897F;
       color: #FFFFFF;
     }
   }

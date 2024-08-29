@@ -18,34 +18,16 @@ function Sessions() {
         <>
             <TitleStyles>Selecione o horário</TitleStyles>
 
-            <SessionStyled>
-                <h3>Quinta-feira, 21/03/2024</h3>
-                <div>
-                    <p>10:00</p>
-                    <p>15:00</p>
-                    <p>19:00</p>
-                    <p>19:00</p>
-                </div>
-            </SessionStyled>
-
-            <SessionStyled>
-                <h3>Quinta-feira, 21/03/2024</h3>
-                <div>
-                    <p>10:00</p>
-                    <p>15:00</p>
-                    <p>19:00</p>
-                    <p>19:00</p>
-                </div>
-            </SessionStyled>
-            <SessionStyled>
-                <h3>Quinta-feira, 21/03/2024</h3>
-                <div>
-                    <p>10:00</p>
-                    <p>15:00</p>
-                    <p>19:00</p>
-                    <p>19:00</p>
-                </div>
-            </SessionStyled>
+            {sessions && sessions.days.map(day => (
+                <SessionStyled key={day.id}>
+                    <h3>{day.weekday}, {day.date}</h3>
+                    <div>
+                        {day.showtimes.map(showtime => (
+                            <p key={showtime.id}>{showtime.name}</p>
+                        ))}
+                    </div>
+                </SessionStyled>
+            ))}
         </>
     )
 }
