@@ -11,8 +11,8 @@ function Movies() {
         const getFilms = axios.get("https://mock-api.driven.com.br/api/v8/cineflex/movies")
         getFilms.then(req => { setFilms(req.data) })
     }, [])
+    console.log(films)
 
-    console.log(`Films =>>>>> ${films}`)
 
     return (
         <>
