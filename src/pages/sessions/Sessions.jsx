@@ -23,8 +23,8 @@ function Sessions() {
                     <h3>{day.weekday}, {day.date}</h3>
                     <div>
                         {day.showtimes.map(showtime => (
-                            <Link to={`/assentos/${showtime.id}`}>
-                                <p key={showtime.id}>{showtime.name}</p>
+                            <Link key={showtime.id} to={`/assentos/${showtime.id}`}>
+                                <p >{showtime.name}</p>
                             </Link>
                         ))}
                     </div>

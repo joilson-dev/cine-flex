@@ -20,10 +20,11 @@ function Seat() {
     const [cpf, setCpf] = useState("");
 
     useEffect(() => {
-        axios.get(`https://mock-api.driven.com.br/api/v8/cineflex/showtimes/${idSessao}/seats`)
-            .then(req => {
-                setSeats(req.data);
-            });
+        const getSeats = axios.get(`https://mock-api.driven.com.br/api/v8/cineflex/showtimes/${idSessao}/seats`);
+
+        getSeats.then(req => {
+            setSeats(req.data);
+        });
     }, [idSessao]);
 
     function sendAffirmation(event) {
@@ -35,11 +36,21 @@ function Seat() {
             cpf: cpf,
         });
 
-        requisicao.then(() => navigate("/sucesso"));
+        requisicao.then(() => {
+            // Navegar para a rota /sucesso e passar os dados via state
+            navigate("/sucesso", {
+                state: {
+                    movie: seats.movie,
+                    day: seats.day,
+                    name: seats.name,
+                    seats: selectedSeats.map(id => seats.seats.find(seat => seat.id === id)),
+                    buyer: { name, cpf }
+                }
+            });
+        });
     }
 
     const toggleSeatSelection = (seatId, isAvailable) => {
-
         if (!isAvailable) {
             alert("Esse assento não está disponível");
             return;
@@ -61,10 +72,10 @@ function Seat() {
                 <SeatsGrid>
                     {seats && seats.seats.map((seatItem) => (
                         <SeatStyled
-                            onClick={() => toggleSeatSelection(seatItem.id, seatItem.isAvailable)}
                             key={seatItem.id}
                             $isAvailable={seatItem.isAvailable}
                             $selected={selectedSeats.includes(seatItem.id)}
+                            onClick={() => toggleSeatSelection(seatItem.id, seatItem.isAvailable)}
                         >
                             {seatItem.name}
                         </SeatStyled>
