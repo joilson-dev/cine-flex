@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { TitleStyles } from "../../components/Title-styles";
 import axios from "axios";
 import { ContainerMoviesStyled, ImgStyled } from "./Movies-styles";
+import { Link } from "react-router-dom";
 
 
 function Movies() {
@@ -21,7 +22,9 @@ function Movies() {
                 <ContainerMoviesStyled>
                     {films.map((film) => (
                         <li key={film.id}>
-                            <ImgStyled src={film.posterURL} alt={film.title} />
+                            <Link to={`/sessoes/${film.id}`}>
+                                <ImgStyled src={film.posterURL} alt={film.title} />
+                            </Link>
                         </li>
                     ))}
                 </ContainerMoviesStyled>

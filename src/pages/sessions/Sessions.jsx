@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { TitleStyles } from "../../components/Title-styles"
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 import { SessionStyled } from "./Sessions-styles";
 
@@ -23,7 +23,9 @@ function Sessions() {
                     <h3>{day.weekday}, {day.date}</h3>
                     <div>
                         {day.showtimes.map(showtime => (
-                            <p key={showtime.id}>{showtime.name}</p>
+                            <Link to={`/assentos/${showtime.id}`}>
+                                <p key={showtime.id}>{showtime.name}</p>
+                            </Link>
                         ))}
                     </div>
                 </SessionStyled>

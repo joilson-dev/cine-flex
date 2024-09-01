@@ -27,6 +27,9 @@ export const SessionStyled = styled.div`
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
   }
+  a{
+    text-decoration: none;
+  }
 
   p {
     background-color: transparent;
@@ -37,15 +40,8 @@ export const SessionStyled = styled.div`
     text-align: center;
     cursor: pointer;
     font-size: 16px;
-    transition: all 0.2s ease-in-out;
     font-weight: 400;
     line-height: 26.09px;
     letter-spacing: 0.04em;
-
-
-    &:hover {
-      background-color: #EE897F;
-      color: #FFFFFF;
-    }
   }
 `;
