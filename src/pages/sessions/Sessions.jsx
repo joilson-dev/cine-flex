@@ -12,7 +12,6 @@ function Sessions() {
         const getSessions = axios.get(`https://mock-api.driven.com.br/api/v8/cineflex/movies/${idfilm}/showtimes`)
         getSessions.then(req => { setSessions(req.data) })
     }, [])
-    console.log(sessions)
 
     return (
         <>
